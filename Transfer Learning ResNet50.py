@@ -2,7 +2,7 @@
 """
 Created on Mon May  5 20:58:22 2025
 
-@author: sanje
+@author: sanjeela
 """
 
 """
@@ -19,8 +19,8 @@ from tensorflow.keras.applications import ResNet50
 from tensorflow.keras.applications.resnet50 import preprocess_input
 
 # Set paths
-train_dir = "C:/Users/Admin/Downloads/Paper 6/DataSet/train"
-val_dir = "C:/Users/Admin/Downloads/Paper 6/DataSet/val"
+train_dir = "/DataSet/train"
+val_dir = "/DataSet/val"
 
 # Parameters
 BATCH_SIZE = 512
@@ -140,7 +140,7 @@ print(pd.DataFrame(cm, index=class_names, columns=class_names))
 # Step 7: Predict a single new image
 # from tensorflow.keras.utils import load_img, img_to_array
 
-# img_path = 'C:/Sanjeela/PhD Code/Mrs. Sanjeela sagar-760543/Dataset/Original/Septoria Leaf Spot/TSLS (61).jpg'
+# img_path = '/Dataset/Septoria Leaf Spot/TSLS (61).jpg'
 # img = load_img(img_path, target_size=IMG_SIZE)
 # img_array = img_to_array(img)
 # img_array = preprocess_input(img_array)
@@ -148,4 +148,5 @@ print(pd.DataFrame(cm, index=class_names, columns=class_names))
 
 # prediction = model.predict(img_array)
 # predicted_class = class_names[np.argmax(prediction)]
+
 # print("Predicted Class:", predicted_class)
