@@ -2,7 +2,7 @@
 """
 Created on Sun May  4 17:49:23 2025
 
-@author: sanje
+@author: sanjeela
 """
 import psutil
 
@@ -18,13 +18,13 @@ import pandas as pd
 
 # Load raw training and validation datasets
 raw_train_ds = tf.keras.preprocessing.image_dataset_from_directory(
-    "C:/Users/Admin/Downloads/Paper 6/DataSet/train",
+    "yourFolderName/train",
     image_size=(256, 256),
     batch_size=64
 )
 
 raw_val_ds = tf.keras.preprocessing.image_dataset_from_directory(
-    "C:/Users/Admin/Downloads/Paper 6/DataSet/val",
+    "yourFolderName/val",
     image_size=(256, 256),
     batch_size=64
 )
@@ -82,7 +82,7 @@ print("Model parameters:", svm_model.get_params())
 # import tensorflow as tf
 
 # # 1. Load and preprocess the image
-# img_path = 'C:/Sanjeela/PhD Code/Mrs. Sanjeela sagar-760543/Dataset/Original/Septoria Leaf Spot/TSLS (61).jpg'
+# img_path = 'yourFolderName/TSLS (61).jpg'
 # img = tf.keras.utils.load_img(img_path, target_size=(256, 256))  # resize to match training
 # img_array = tf.keras.utils.img_to_array(img)
 # img_array = img_array / 255.0  # normalize
@@ -95,4 +95,5 @@ print("Model parameters:", svm_model.get_params())
 # print(class_names)
 
 # # 3. Map index to class label
+
 # print("Predicted class:", class_names[predicted_class_index])
