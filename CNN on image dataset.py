@@ -2,7 +2,7 @@
 """
 Created on Sun May  4 19:06:45 2025
 
-@author: sanje
+@author: sanjeela
 """
 
 #CNN
@@ -12,14 +12,14 @@ import tensorflow as tf
 
 # Load dataset (resize to 128x128)
 train_ds = tf.keras.preprocessing.image_dataset_from_directory(
-    "C:/Sanjeela/mydataset/train",
+    "DirName/train",
     image_size=(128, 128),
     batch_size=32,
     shuffle=True
 )
 
 val_ds = tf.keras.preprocessing.image_dataset_from_directory(
-    "C:/Sanjeela/mydataset/val",
+    "DirName/val",
     image_size=(128, 128),
     batch_size=32
 )
@@ -27,14 +27,14 @@ val_ds = tf.keras.preprocessing.image_dataset_from_directory(
 # Normalize (0–1 scaling)
 # Load raw datasets
 raw_train_ds = tf.keras.preprocessing.image_dataset_from_directory(
-    "C:/Sanjeela/mydataset/train",
+    "DirName/train",
     image_size=(128, 128),
     batch_size=32,
     shuffle=True
 )
 
 raw_val_ds = tf.keras.preprocessing.image_dataset_from_directory(
-    "C:/Sanjeela/mydataset/val",
+    "DirName/val",
     image_size=(128, 128),
     batch_size=32
 )
@@ -124,7 +124,7 @@ print("Classification Report:\n", classification_report(y_true, y_pred, target_n
 from tensorflow.keras.utils import load_img, img_to_array
 import numpy as np
 
-img_path = 'C:/Sanjeela/PhD Code/Mrs. Sanjeela sagar-760543/Dataset/Original/Septoria Leaf Spot/TSLS (61).jpg'
+img_path = 'ImagePath/Septoria Leaf Spot/TSLS (61).jpg'
 img = load_img(img_path, target_size=(128, 128))
 img_array = img_to_array(img) / 255.0
 img_array = np.expand_dims(img_array, axis=0)
@@ -132,4 +132,5 @@ img_array = np.expand_dims(img_array, axis=0)
 # Predict
 prediction = model.predict(img_array)
 predicted_class = class_names[np.argmax(prediction)]
+
 print("Predicted Class:", predicted_class)
