@@ -2,7 +2,7 @@
 """
 Created on Sun May  4 18:09:58 2025
 
-@author: sanje
+@author: sanjeela
 """
 
 #Naive Bayes
@@ -16,13 +16,13 @@ import numpy as np
 
 # 1. Load training and validation datasets
 raw_train_ds = tf.keras.preprocessing.image_dataset_from_directory(
-    "C:/Users/Admin/Downloads/Paper 6/DataSet/train",
+    "yourDirectoryName/train",
     image_size=(256, 256),   # smaller size = fewer features (64*64*3 = 12,288)
     batch_size=64
 )
 
 raw_val_ds = tf.keras.preprocessing.image_dataset_from_directory(
-    "C:/Users/Admin/Downloads/Paper 6/DataSet/val",
+    "yourDirectoryName/val",
     image_size=(256, 256),
     batch_size=64
 )
@@ -73,7 +73,7 @@ print(pd.DataFrame(cm, index=class_names, columns=class_names))
 
 # Prediction on a Single Image
 # 1. Load and preprocess the single image
-#img_path = 'C:/Sanjeela/PhD Code/Mrs. Sanjeela sagar-760543/Dataset/Original/Septoria Leaf Spot/TSLS (61).jpg'
+#img_path = 'yourDirectoryName/TSLS (61).jpg'
 #img = tf.keras.utils.load_img(img_path, target_size=(64, 64))
 #img_array = tf.keras.utils.img_to_array(img)
 #img_array = img_array / 255.0
@@ -84,4 +84,5 @@ print(pd.DataFrame(cm, index=class_names, columns=class_names))
 
 # 3. Map index to class label
 #class_names = raw_train_ds.class_names
+
 #print("Predicted class:", class_names[predicted_class_index])
