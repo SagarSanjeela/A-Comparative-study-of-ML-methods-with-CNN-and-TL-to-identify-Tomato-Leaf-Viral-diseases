@@ -2,7 +2,7 @@
 """
 Created on Sun May  4 18:34:48 2025
 
-@author: sanje
+@author: sanjeela
 """
 
 #Random forest
@@ -13,13 +13,13 @@ import pandas as pd
 
 # Load resized images (64x64)
 raw_train_ds = tf.keras.preprocessing.image_dataset_from_directory(
-    "C:/Users/Admin/Downloads/Paper 6/DataSet/train",
+    "yourFolderName/train",
     image_size=(256, 256),
     batch_size=128
 )
 
 raw_val_ds = tf.keras.preprocessing.image_dataset_from_directory(
-    "C:/Users/Admin/Downloads/Paper 6/DataSet/val",
+    "yourFolderName/val",
     image_size=(256, 256),
     batch_size=128
 )
@@ -77,7 +77,7 @@ print(pd.DataFrame(cm, index=class_names, columns=class_names))
 # import numpy as np
 
 # Load and preprocess a single image
-# img_path = 'C:/Sanjeela/PhD Code/Mrs. Sanjeela sagar-760543/Dataset/Original/Septoria Leaf Spot/TSLS (61).jpg'
+# img_path = 'yourFolderName/TSLS (61).jpg'
 # img = tf.keras.utils.load_img(img_path, target_size=(256, 256))
 # img_array = tf.keras.utils.img_to_array(img)
 # img_array = img_array / 255.0
@@ -86,4 +86,5 @@ print(pd.DataFrame(cm, index=class_names, columns=class_names))
 # # Predict
 # predicted_class_index = rf_model.predict(img_array)[0]
 # class_names = raw_train_ds.class_names
+
 # print("Predicted class:", class_names[predicted_class_index])
